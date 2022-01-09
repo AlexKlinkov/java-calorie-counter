@@ -11,13 +11,15 @@ public class StepTracker {
             // Если объект пуст, создаем новый, в который будем заносить данные о пройденных шагах
             StepTracker stepTracker = new StepTracker();
             MonthData monthData =
-                    stepTracker.monthToData.get(monthChoose - 1); // Получил таблицу с днями и значениями за выбранный месяц
+                    stepTracker.monthToData.get(monthChoose - 1); // Получил таблицу с днями и значениями за
+            // выбранный месяц
             monthData.monthDate.put(dayChoose, quantityPassedSteps); // Вставил новое значения о пройденных шагах
             stepTracker.monthToData.put(monthChoose - 1, monthData); // Объединили месяц, день и шаги
             saveSteps = stepTracker; // Сохранили новое значение в новый объект
         } else if (saveSteps != null) { // Усли объект не пуст, добавляем новые значения в уже созданный объект
             MonthData monthData =
-                    saveSteps.monthToData.get(monthChoose - 1); // Получил таблицу с днями и значениями за выбранный месяц
+                    saveSteps.monthToData.get(monthChoose - 1); // Получил таблицу с днями и значениями за выбранный
+            // месяц
             monthData.monthDate.put(dayChoose, quantityPassedSteps); // Втавил новое значения о пройденных шагах
             saveSteps.monthToData.put(monthChoose - 1, monthData); // Объединили месяц, день и шаги
         }
@@ -26,7 +28,8 @@ public class StepTracker {
     void outPutStatistic(int monthChoose) {
         int sumAllStepForMonth = 0; // Подсчитываем кол-во шагов за месяц
         int maxQuantityStepsForMonth = 0; // Максимальное количество шагов в день за месяц
-        int countMaxDaysAchieveTarget = 0; // Мксимальное количество дней подряд перевыполнения цели по пройденным шагам в день
+        int countMaxDaysAchieveTarget = 0; // Масимальное количество дней подряд перевыполнения цели по пройденным
+        // шагам в день
         if (saveSteps != null) { // Проверяем есть ли уже внесенные значения
             MonthData daySteps =
                     saveSteps.monthToData.get(monthChoose - 1); // Получаем информацию за месяц в виде дней и шагов
@@ -75,12 +78,14 @@ public class StepTracker {
             System.out.println("Общее количество шагов за месяц - " + sumAllStepForMonth);
             System.out.println("Максимальное количество шагов за месяц - " + maxQuantityStepsForMonth);
             System.out.println("Среднее количество шагов за месяц - " + (sumAllStepForMonth / 30));
-            System.out.println("Пройденная дистанция за месяц " + (sumAllStepForMonth * converter.getOneStep()) + " - км.");
+            System.out.println("Пройденная дистанция за месяц " +
+                    (sumAllStepForMonth * converter.getOneStep()) + " - км.");
             System.out.println("За месяц вы сожгли " +
                     (sumAllStepForMonth * converter.getBurnKiloKcalForOneStep()) + " - килокалорий.");
             System.out.println("Максимальное количество подряд идущих дней, в течение которых " +
                     "количество шагов за день было выше целевого равно: " + countMaxDaysAchieveTarget);
-        } else if (saveSteps == null) { // Если значения о шагах еще не вносились, создаем новый объект с нулями по умолчанию.
+        } else if (saveSteps == null) {
+            // Если значения о шагах еще не вносились, создаем новый объект с нулями по умолчанию.
             StepTracker stepTracker = new StepTracker();
             MonthData daySteps = stepTracker.monthToData.get(monthChoose - 1);
             for (int day : daySteps.monthDate.keySet()) {
@@ -90,7 +95,8 @@ public class StepTracker {
             System.out.println("Общее количество шагов за месяц - " + sumAllStepForMonth);
             System.out.println("Максимальное количество шагов за месяц - " + maxQuantityStepsForMonth);
             System.out.println("Среднее количество шагов за месяц - " + (sumAllStepForMonth / 30));
-            System.out.println("Пройденная дистанция за месяц " + (sumAllStepForMonth * converter.getOneStep()) + " - км.");
+            System.out.println("Пройденная дистанция за месяц " +
+                    (sumAllStepForMonth * converter.getOneStep()) + " - км.");
             System.out.println("За месяц вы сожгли " +
                     (sumAllStepForMonth * converter.getBurnKiloKcalForOneStep()) + " - килокалорий.");
             System.out.println("Максимальное количество подряд идущих дней, в течение которых " +
@@ -114,7 +120,6 @@ public class StepTracker {
     }
 
     static class MonthData {
-        // Заполните класс самостоятельно
         HashMap<Integer, Integer> monthDate = new HashMap<>();
 
         public MonthData() {

@@ -12,18 +12,7 @@ public class Main {
             if (userInput == 1) {
                 System.out.println("За какой месяц вы хотите ввести данные?");
                 System.out.println("Введите номер соответствующего месяца");
-                System.out.print("1-Январь: ");
-                System.out.print("2-Февраль: ");
-                System.out.println("3-Март");
-                System.out.print("4-Апрель: ");
-                System.out.print("5-Май: ");
-                System.out.println("6-Июнь");
-                System.out.print("7-Июль: ");
-                System.out.print("8-Август: ");
-                System.out.println("9-Сентябрь");
-                System.out.print("10-Октябрь: ");
-                System.out.print("11-Ноябрь: ");
-                System.out.println("12-Декабрь");
+                printMonth(); // Вывод месяца для выбора
                 int monthChoose = scanner.nextInt();
                 System.out.println("За какой день вы хотите ввести данные?");
                 System.out.println("Введите число от 1 до 30");
@@ -37,18 +26,7 @@ public class Main {
             } else if (userInput == 2) {
                 System.out.println("За какой месяц вы хотите получить статистику?");
                 System.out.println("Введите номер соответствующего месяца");
-                System.out.print("1-Январь: ");
-                System.out.print("2-Февраль: ");
-                System.out.println("3-Март");
-                System.out.print("4-Апрель: ");
-                System.out.print("5-Май: ");
-                System.out.println("6-Июнь");
-                System.out.print("7-Июль: ");
-                System.out.print("8-Август: ");
-                System.out.println("9-Сентябрь");
-                System.out.print("10-Октябрь: ");
-                System.out.print("11-Ноябрь: ");
-                System.out.println("12-Декабрь");
+                printMonth(); // Вывод месяца для выбора
                 int monthChoose = scanner.nextInt();
                 step.outPutStatistic(monthChoose);
                 printMenu();
@@ -74,6 +52,22 @@ public class Main {
         System.out.println("2. Напечатать статистику за определённый месяц");
         System.out.println("3. Изменить цель по количеству шагов в день");
         System.out.println("4. Выйти из приложения");
+    }
+    private static void printMonth(){
+        System.out.println("За какой месяц вы хотите получить статистику?");
+        System.out.println("Введите номер соответствующего месяца");
+        System.out.print("1-Январь: ");
+        System.out.print("2-Февраль: ");
+        System.out.println("3-Март");
+        System.out.print("4-Апрель: ");
+        System.out.print("5-Май: ");
+        System.out.println("6-Июнь");
+        System.out.print("7-Июль: ");
+        System.out.print("8-Август: ");
+        System.out.println("9-Сентябрь");
+        System.out.print("10-Октябрь: ");
+        System.out.print("11-Ноябрь: ");
+        System.out.println("12-Декабрь");
     }
 }
 
